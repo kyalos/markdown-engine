@@ -10,7 +10,7 @@
     2. Showdown 
     3. PHP
     4. Javascript
-    5. Jquery
+    5. JQuery
     6. HTML5
     7: W3css
 
@@ -26,10 +26,12 @@
 
 * To solve this problem I took advantage of showdown which is a the tool that will enable us to convert our markdowns into html.
 
-* From the interface, we request the user to enter the syntax of the markdown they want to be converted. To begin with, I have provided a default syntax that the user can start with. On the right side of the page, I am displaying the results of the generated html file.
+* From the interface, we request the user to enter the syntax of the markdown they want to be converted. To begin with, I have provided a default syntax that the user can start with. On the right side of the form, I am displaying the results of the generated html file using JQuery.
 
-* Once the data is received in the backend, PHP creates a new markdown file containing the syntax sent from the form. The name of this file is what we send to showdown using command line arguments.
+* Once the data is received in the backend, PHP creates a new markdown file containing the syntax sent from the form. The name of this file is what we send to showdown using command line arguments. The process will generate a _sample.html_ file which will be displayed to the user.
 
  _Command line argument syntax:_
-``` $com = "showdown makehtml -i " . $page_name . " -o ." . $file_name;```
+```$com = "showdown makehtml -i " . $page_name . " -o .\sample.html";```
+
+ 
 
