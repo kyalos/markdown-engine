@@ -10,25 +10,7 @@ unset($_SESSION["Msg"]);
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["file_name"])) {
 
-        $_SESSION["msgType"] = "red";
-        $_SESSION["Msg"] = "File name is required";
-
-        header("location: ../index.php");
-        exit();
-    } else {
-        $file_name = test_input($_POST["file_name"]);
-
-        // Concatenate file name with  backslash
-        $file_name = $file_name . '\ ';
-
-        // Using str_ireplace() function 
-        // to remove all whitespaces  
-        $file_name = str_ireplace(' ', '', $file_name);
-
-        $_SESSION['file_name'] = "." . $file_name;
-    }
 
     if (empty($_POST["markdown"])) {
         $_SESSION["msgType"] = "red";
@@ -51,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $random_id = $randomString;
 
+    //create a new markdown file and populate with markdown syntax
 
     $myfile = fopen("markdown" . "$random_id.md", "w") or die("Unable to open file!");
     $txt = $markdown;
@@ -61,10 +44,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $page_name = "markdown" . "$random_id.md";
 
-    // $com = "showdown makehtml -i markd.md -o .\sample_readme.html";
 
     //command line argument to create a markdown file
-    $com = "showdown makehtml -i " . $page_name . " -o ." . $file_name;
+    $com = "showdown makehtml -i " . $page_name . " -o .\sample.html";
+
+    //store file name in a session for rendering.
+    $_SESSION['file_name'] = "sample.html";
+
 
     $output = shell_exec($com);
 

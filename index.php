@@ -53,10 +53,6 @@
                 </div>
                 <form class="w3-container" method="POST" action="backend/create-markdown.php">
                     <p>
-                        <label class="w3-text-brown"><b>File name</b></label>
-                        <input class="w3-input w3-border w3-round w3-sand" name="file_name" type="text">
-                    </p>
-                    <p>
                     <div class="w3-right w3-ripple w3-tag w3-round w3-brown" style="padding:3px; cursor: pointer;" onclick="document.getElementById('markdown').value = ''">
                         <div class="w3-tag w3-round w3-brown w3-border w3-border-white">
                             Write your own markdown
