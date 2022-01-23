@@ -18,10 +18,11 @@
     
 ## Setting up and how to start the application
 
+* Install showdown using ```npm install showdown -g```
 * Clone the repo into an apache server in your local machine or online 
 * Start your apache server
-* On your browser, enter localhost/mardown-engine or "onlineURL/mardown-engine" for online hosting.
+* On your browser, enter ```localhost/mardown-engine``` or ```yourOnlineURL/mardown-engine``` if you have done online hosting.
 
 ## Implementation
 
-* To solve this problem
+* To solve this problem I took advantage of
